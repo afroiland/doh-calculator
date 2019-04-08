@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import LifeCounter from './components/lifeCounter';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-      test
-      </div>
+      <LifeCounter />
     );
   }
 }
