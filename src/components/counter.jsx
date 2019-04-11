@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class LifeCounter extends Component {
+class Counter extends Component {
   state = {  }
   render() { 
     return (
@@ -9,4 +9,4 @@ class LifeCounter extends Component {
   }
 }
  
-export default LifeCounter;
+export default Counter;
