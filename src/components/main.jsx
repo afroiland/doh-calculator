@@ -7,16 +7,18 @@ class Main extends Component {
     oppLife: 0,
     lands: 0,
     nonLifelinkPower: 0,
-    lifelinkPower: 0
+    lifelinkPower: 0,
+    reclamations: 0
   }
   render() {
     return (
       <div>
-        <Counter />
-        <Counter />
-        <Counter />
-        <Counter />
-        <Counter />
+        <Counter name = 'life' value = {this.state.life} />
+        <Counter name = 'oppLife' value = {this.state.oppLife} />
+        <Counter name = 'lands' value = {this.state.lands} />
+        <Counter name = 'nonLifelinkPower' value = {this.state.nonLifelinkPower} />
+        <Counter name = 'lifelinkPower' value = {this.state.lifelinkPower} />
+        <Counter name = 'reclamations' value = {this.state.reclamations} />
       </div>
     );
   }

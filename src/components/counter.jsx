@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
-  state = {
-    value: 0
-  }
   render() {
+    //console.log("props: ", this.props);
     return (
       <div>
-        <span>{this.state.value}</span>
+        <span>{this.props.name}</span>
+        <span> {this.props.value} </span>
         <button>+</button>
         <button>-</button>
+        <br />
+        <br />
       </div>
     );
   }
