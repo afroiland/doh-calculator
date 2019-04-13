@@ -7,7 +7,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <p>{this.state.value}</p>
+        <span>{this.state.value}</span>
         <button>+</button>
         <button>-</button>
       </div>
