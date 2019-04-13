@@ -7,13 +7,21 @@ class Counter extends Component {
       <div>
         <span>{this.props.name}</span>
         <span> {this.props.value} </span>
-        <button>+</button>
-        <button>-</button>
+        <button onClick={() => this.handleIncrement()}>+</button>
+        <button onClick={() => this.handleDecrement()}>-</button>
         <br />
         <br />
       </div>
     );
   }
+
+  handleIncrement = () => {
+    console.log('increment');
+  }
+
+  handleDecrement = () => {
+    console.log('decrement');
+  }
 }
 
-export default Counter; 
+export default Counter;
