@@ -16,12 +16,12 @@ class Counter extends Component {
     //console.log("props: ", this.props);
     return (
       <div>
-        <span>{this.getName(this.props.name) + " "}</span>
+        <span style={{marginRight: 10}}>{this.getName(this.props.name)}</span>
         <button onClick={() => this.handleBigDecrement(this.props.name, this.props.value)}>-5</button>
         <button onClick={() => this.handleDecrement(this.props.name, this.props.value)}>-</button>
         <button onClick={() => this.handleIncrement(this.props.name, this.props.value)}>+</button>
         <button onClick={() => this.handleBigIncrement(this.props.name, this.props.value)}>+5</button>
-        <span> {this.props.value} </span>
+        <span style={{marginLeft: 10}}>{this.props.value} </span>
         <br />
         <br />
       </div>
