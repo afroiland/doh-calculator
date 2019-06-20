@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Counter from './counter';
+import { calc } from '../functions/calc';
 
 class Main extends Component {
   state = {
@@ -37,7 +38,7 @@ class Main extends Component {
           <div style={{flexGrow: 1}}></div>
         </div>
         <div>
-          <p style={{textAlign: 'center'}}>test</p>
+          <p style={{textAlign: 'center'}}>{calc()}</p>
         </div>
       </div>
     );
