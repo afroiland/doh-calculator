@@ -6,21 +6,23 @@ class Counter extends Component {
     return (
       <div>
         <span>{this.props.name}</span>
+        <button onClick={() => this.handleIncrement(this.props.name, this.props.value)}>+</button>
+        <button onClick={() => this.handleDecrement(this.props.name, this.props.value)}>-</button>
         <span> {this.props.value} </span>
-        <button onClick={() => this.handleIncrement()}>+</button>
-        <button onClick={() => this.handleDecrement()}>-</button>
         <br />
         <br />
       </div>
     );
   }
 
-  handleIncrement = () => {
-    console.log('increment');
+  handleIncrement = (name, value) => {
+    let newValue = value + 1;
+    this.props.handleChange(name, newValue);
   }
 
-  handleDecrement = () => {
-    console.log('decrement');
+  handleDecrement = (name, value) => {
+    let newValue = value==0 ? 0 : value -1;
+    this.props.handleChange(name, newValue);
   }
 }
 
