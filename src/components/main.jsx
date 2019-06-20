@@ -3,11 +3,11 @@ import Counter from './counter';
 
 class Main extends Component {
   state = {
-    Life: 0,
+    life: 0,
     oppLife: 0,
     lands: 0,
-    nonLifelinkPower: 0,
     lifelinkPower: 0,
+    nonLifelinkPower: 0,
     reclamations: 0
   }
 
@@ -20,12 +20,12 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <Counter name='Life' value={this.state.Life} handleChange={this.handleChange} />
-        <Counter name='Opponent Life' value={this.state.oppLife} handleChange={this.handleChange} />
-        <Counter name='Lands' value={this.state.lands} handleChange={this.handleChange} />
-        <Counter name='Lifelink Power' value={this.state.lifelinkPower} handleChange={this.handleChange} />
-        <Counter name='Non-Lifelink Power' value={this.state.nonLifelinkPower} handleChange={this.handleChange} />
-        <Counter name='Reclamations' value={this.state.reclamations} handleChange={this.handleChange} />
+        <Counter name='life' value={this.state.life} handleChange={this.handleChange} />
+        <Counter name='oppLife' value={this.state.oppLife} handleChange={this.handleChange} />
+        <Counter name='lands' value={this.state.lands} handleChange={this.handleChange} />
+        <Counter name='lifelinkPower' value={this.state.lifelinkPower} handleChange={this.handleChange} />
+        <Counter name='nonLifelinkPower' value={this.state.nonLifelinkPower} handleChange={this.handleChange} />
+        <Counter name='reclamations' value={this.state.reclamations} handleChange={this.handleChange} />
       </div>
     );
   }
