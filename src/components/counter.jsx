@@ -21,7 +21,7 @@ class Counter extends Component {
         <button onClick={() => this.handleDecrement(this.props.name, this.props.value)}>-</button>
         <button onClick={() => this.handleIncrement(this.props.name, this.props.value)}>+</button>
         <button onClick={() => this.handleBigIncrement(this.props.name, this.props.value)}>+5</button>
-        <span style={{marginLeft: 10}}>{this.props.value} </span>
+        <span style={{display: 'inline-block', width: 30, textAlign: 'right'}}>{this.props.value} </span>
         <br />
         <br />
       </div>

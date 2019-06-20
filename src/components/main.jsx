@@ -20,6 +20,20 @@ class Main extends Component {
     this.setState({ [name] : value });
   };
 
+  reset = () => {
+    //console.log("resetting");
+    this.setState({
+      life: 0,
+      oppLife: 0,
+      lands: 0,
+      lifelinkPower: 0,
+      nonLifelinkPower: 0,
+      oppPower: 0,
+      oppEvasivePower: 0,
+      reclamations: 0
+    })
+  }
+
   render() {
     return (
       <div style={{marginTop: 35}}>
@@ -38,7 +52,10 @@ class Main extends Component {
           <div style={{flexGrow: 1}}></div>
         </div>
         <div>
-          <p style={{textAlign: 'center'}}>{calc()}</p>
+          <p style={{textAlign: 'center'}}>
+            <button onClick={() => this.reset()}>Reset All</button>
+          </p>
+          <p style={{textAlign: 'center'}}>{calc(this.state)}</p>
         </div>
       </div>
     );

@@ -1,4 +1,4 @@
-export function calc() {
-  console.log("calcing");
+export function calc(state) {
+  //console.log("state: ", state);
   return "calc response";
 }
