@@ -1,6 +1,13 @@
+import { convertForDisplay } from "./convertForDisplay";
+
 export function calc(state) {
   console.log("state: ", state);
-  let response = '';
+  let numbersToCrunch = {
+    soldiers: 0,
+    productionCapacity: 0,
+    productionRecommendation: 0,
+    attackRecommendation: 0
+  };
 
   let productionCapacity = (state.lands / 4) * (1 + state.reclamations);
   console.log("productionCapacity: ", productionCapacity);
@@ -16,24 +23,18 @@ export function calc(state) {
 
 
 
-
-
-
-
-
-
   if (state.oppLife <= (state.soldiers - state.oppBlockers)) {
-    response = "You should probably attack.";
+    numbersToCrunch.attackRecommendation = state.soldiers;
   // } else {
   //   if ( ) {
 
   //   }
 
   } else {
-    response = "Use your best judgment."
+    numbersToCrunch.attackRecommendation = 0;
   }
 
 
 
-  return response;
+  return convertForDisplay(numbersToCrunch);
 }

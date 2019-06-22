@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 class Display extends Component {
-  state = {  }
-  render() { 
+  render() {
+    console.log("props: ", this.props);
     return (
       <div></div>
     );

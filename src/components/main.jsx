@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Counter from './counter';
 import { calc } from '../functions/calc';
+import Display from './result-display';
 
 class Main extends Component {
   state = {
@@ -55,7 +56,10 @@ class Main extends Component {
           <p style={{textAlign: 'center'}}>
             <button onClick={() => this.reset()}>Reset All</button>
           </p>
-          <p style={{textAlign: 'center'}}>{calc(this.state)}</p>
+
+          <Display displayValues = {calc(this.state)}/>
+
+          {/* <p style={{textAlign: 'center'}}>{calc(this.state)}</p> */}
         </div>
       </div>
     );
