@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 
 class Display extends Component {
   render() {
-    console.log("props: ", this.props);
+    console.log("this.props: ", this.props);
     return (
-      <div></div>
+      <div style={{textAlign: 'center'}}>
+        <p>You have {this.props.displayValues.soldiers} soldiers. You can make {this.props.displayValues.productionCapacity} soldiers each turn.</p>
+        <p>The calculator recommends making {this.props.displayValues.productionRecommendation} soldiers 
+          this turn and attacking with {this.props.displayValues.attackRecommendation}.</p>
+      </div>
     );
   }
 }
