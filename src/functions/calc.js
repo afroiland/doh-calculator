@@ -8,6 +8,19 @@ export function calc(state) {
   let turnsToKillOpp = state.oppLife / (state.soldiers + productionCapacity);
   console.log("turnsToKillOpp: ", turnsToKillOpp);
 
+  //let turnsForOppToKillUs = state.life / (state.oppEvasivePower + ())
+
+
+  // loop through X turns and crunch nums
+
+
+
+
+
+
+
+
+
 
   if (state.oppLife <= (state.soldiers - state.oppBlockers)) {
     response = "You should probably attack.";
