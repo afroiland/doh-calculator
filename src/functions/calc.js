@@ -1,5 +1,5 @@
 export function calc(state) {
-  console.log("state: ", state);
+  //console.log("state: ", state);
 
   let { life, oppLife, lands, reclamations, soldiers, oppBlockers, oppPower, oppEvasivePower } = state;
 
@@ -8,17 +8,36 @@ export function calc(state) {
     productionRecommendation: 0,
     attackRecommendation: "nothing"
   };
-  
-  // loop through X turns and crunch nums
+
+  let tempLife = life;
+  let tempOppLife = oppLife;
+  let tempSoldiers = soldiers;
+  let tempOppPower = oppPower;
+  let tempOppEvasivePower = oppEvasivePower;
+
+  // who wins race under current conditions?
   for (let i = 0; i < 50; i++) {
-    if (oppLife <= soldiers - oppBlockers) {
-      results.attackRecommendation = "everything";
+    tempOppLife -= (tempSoldiers - oppBlockers);
+    tempSoldiers -= oppBlockers;
+    tempLife -= (tempOppPower + tempOppEvasivePower);
+
+    if (tempLife === 0) {
+      console.log("opp wins race");
       break;
-    } else {
-      results.attackRecommendation = "???";
+    }
+    if (tempOppLife === 0) {
+      console.log("we win race");
+      break;
     }
   }
+    
 
-  // TODO: insert some logic for displaying singular or plural of soldier; could do this in result-display.jsx
+
+
+  // Might move the following conditional
+  if (oppLife <= soldiers - oppBlockers) {
+    results.attackRecommendation = "everything";
+  }
+
   return results;
 }
