@@ -19,5 +19,6 @@ export function calc(state) {
     }
   }
 
+  // TODO: insert some logic for displaying singular or plural of soldier; could do this in result-display.jsx
   return results;
 }
