@@ -44,11 +44,11 @@ class Main extends Component {
             <Counter name='life' value={this.state.life} handleChange={this.handleChange} />
             <Counter name='oppLife' value={this.state.oppLife} handleChange={this.handleChange} />
             <Counter name='lands' value={this.state.lands} handleChange={this.handleChange} />
+            <Counter name='reclamations' value={this.state.reclamations} handleChange={this.handleChange} />
             <Counter name='soldiers' value={this.state.soldiers} handleChange={this.handleChange} />
             <Counter name='oppBlockers' value={this.state.oppBlockers} handleChange={this.handleChange} />
             <Counter name='oppPower' value={this.state.oppPower} handleChange={this.handleChange} />
             <Counter name='oppEvasivePower' value={this.state.oppEvasivePower} handleChange={this.handleChange} />
-            <Counter name='reclamations' value={this.state.reclamations} handleChange={this.handleChange} />
           </div>
           <div style={{flexGrow: 1}}></div>
         </div>

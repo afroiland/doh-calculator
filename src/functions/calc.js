@@ -2,39 +2,29 @@ import { convertForDisplay } from "./convertForDisplay";
 
 export function calc(state) {
   console.log("state: ", state);
-  let numbersToCrunch = {
-    soldiers: 0,
-    productionCapacity: 0,
+
+  let results = {
+    productionCapacity: Math.floor((state.lands / 4) * (1 + state.reclamations)),
     productionRecommendation: 0,
-    attackRecommendation: 0
+    attackRecommendation: "nothing"
   };
-
-  let productionCapacity = (state.lands / 4) * (1 + state.reclamations);
-  console.log("productionCapacity: ", productionCapacity);
-
-  let turnsToKillOpp = state.oppLife / (state.soldiers + productionCapacity);
-  console.log("turnsToKillOpp: ", turnsToKillOpp);
-
-  //let turnsForOppToKillUs = state.life / (state.oppEvasivePower + ())
-
-
+  
   // loop through X turns and crunch nums
+  for (let i = 0; i < 50; i++) {
 
-
-
-
-  if (state.oppLife <= (state.soldiers - state.oppBlockers)) {
-    numbersToCrunch.attackRecommendation = state.soldiers;
-  // } else {
-  //   if ( ) {
-
-  //   }
-
-  } else {
-    numbersToCrunch.attackRecommendation = 0;
   }
 
 
 
-  return convertForDisplay(numbersToCrunch);
+  // numbersToCrunch.productionCapacity = (state.lands / 4) * (1 + state.reclamations);
+  // console.log("numbersToCrunch.productionCapacity: ", numbersToCrunch.productionCapacity);
+  
+  // let turnsToKillOpp = state.oppLife / (state.soldiers + numbersToCrunch.productionCapacity);
+  // console.log("turnsToKillOpp: ", turnsToKillOpp);
+
+  //let turnsForOppToKillUs = state.life / (state.oppEvasivePower + ())  
+
+  //return convertForDisplay(numbersToCrunch);
+
+  return results;
 }
