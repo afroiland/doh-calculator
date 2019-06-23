@@ -15,26 +15,29 @@ export function calc(state) {
   let tempOppPower = oppPower;
   let tempOppEvasivePower = oppEvasivePower;
 
-  // who wins race under current conditions?
   for (let i = 0; i < 50; i++) {
-    tempOppLife -= (tempSoldiers - oppBlockers);
+    tempOppLife -= (tempSoldiers - oppBlockers) < 0 ? 0 : (tempSoldiers - oppBlockers);
+    if (tempOppLife < 1) {
+      console.log("we win race in " + (i + 1) + " turns");
+      break;
+    }
+    tempLife += tempSoldiers;
     tempSoldiers -= oppBlockers;
+    if (tempSoldiers < 0) {
+      tempSoldiers = 0;
+    }
+    tempSoldiers += results.productionCapacity;
     tempLife -= (tempOppPower + tempOppEvasivePower);
 
-    if (tempLife === 0) {
-      console.log("opp wins race");
+    if (tempLife < 1) {
+      console.log("opp wins race in " + i + " turns");
       break;
     }
-    if (tempOppLife === 0) {
-      console.log("we win race");
-      break;
-    }
-  }
+
     
+    
+  }
 
-
-
-  // Might move the following conditional
   if (oppLife <= soldiers - oppBlockers) {
     results.attackRecommendation = "everything";
   }

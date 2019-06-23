@@ -7,7 +7,7 @@ class Display extends Component {
     return (
       <div style={{textAlign: 'center'}}>
         {/* <p>You have {this.props.displayValues.soldiers} soldiers.</p> */}
-        <p>You can make {productionCapacity} {productionCapacity === 1 ? "soldier" : "soldiers"} each turn.</p>
+        <p>We can make {productionCapacity} {productionCapacity === 1 ? "soldier" : "soldiers"} each turn.</p>
         <p>The calculator recommends making {productionRecommendation} {productionRecommendation === 1 ? "soldier" : "soldiers"} this 
           turn and attacking with {attackRecommendation}.</p>
       </div>
