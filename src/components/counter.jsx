@@ -4,8 +4,8 @@ const displayNames = {
   life: "Life",
   oppLife: "Opponent's Life",
   lands: "Lands",
-  lifelinkPower: "Lifelink Power",
-  nonLifelinkPower: "Non-Lifelink  Power",
+  soldiers: "Soldiers",
+  oppBlockers: "Opponent's Blockers",
   oppPower: "Opponent Power",
   oppEvasivePower: "Opponent Evasive Power",
   reclamations: "Reclamations"
@@ -17,11 +17,11 @@ class Counter extends Component {
     return (
       <div>
         <span style={{marginRight: 10}}>{this.getName(this.props.name)}</span>
+        <button onClick={() => this.handleDecrement(this.props.name, this.props.value)}>-1</button>
         <button onClick={() => this.handleBigDecrement(this.props.name, this.props.value)}>-5</button>
-        <button onClick={() => this.handleDecrement(this.props.name, this.props.value)}>-</button>
-        <button onClick={() => this.handleIncrement(this.props.name, this.props.value)}>+</button>
         <button onClick={() => this.handleBigIncrement(this.props.name, this.props.value)}>+5</button>
-        <span style={{marginLeft: 10}}>{this.props.value} </span>
+        <button onClick={() => this.handleIncrement(this.props.name, this.props.value)}>+1</button>
+        <span style={{display: 'inline-block', width: 30, textAlign: 'right'}}>{this.props.value} </span>
         <br />
         <br />
       </div>
