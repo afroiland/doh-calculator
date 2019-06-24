@@ -13,14 +13,13 @@ const displayNames = {
 
 class Counter extends Component {
   render() {
-    //console.log("props: ", this.props);
     return (
       <div>
         <span style={{marginRight: 10}}>{this.getName(this.props.name)}</span>
-        <button onClick={() => this.handleDecrement(this.props.name, this.props.value)}>-1</button>
-        <button onClick={() => this.handleBigDecrement(this.props.name, this.props.value)}>-5</button>
-        <button onClick={() => this.handleBigIncrement(this.props.name, this.props.value)}>+5</button>
-        <button onClick={() => this.handleIncrement(this.props.name, this.props.value)}>+1</button>
+        <button onClick={() => this.handleButtonClick(this.props.name, this.props.value, 'decrementBy1')}>-1</button>
+        <button onClick={() => this.handleButtonClick(this.props.name, this.props.value, 'decrementBy5')}>-5</button>
+        <button onClick={() => this.handleButtonClick(this.props.name, this.props.value, 'incrementBy5')}>+5</button>
+        <button onClick={() => this.handleButtonClick(this.props.name, this.props.value, 'incrementBy1')}>+1</button>
         <span style={{display: 'inline-block', width: 30, textAlign: 'right'}}>{this.props.value} </span>
         <br />
         <br />
@@ -32,25 +31,48 @@ class Counter extends Component {
     return displayNames[name];
   }
 
-  handleBigDecrement = (name, value) => {
-    let newValue = value<=5 ? 0 : value -5;
-    this.props.handleChange(name, newValue);
+  handleButtonClick = (name, value, typeOfChange) => {
+    let newValue;
+    switch (typeOfChange) {
+      case 'decrementBy1':
+        newValue = value===0 ? 0 : value -1;
+        this.props.handleChange(name, newValue);
+        break;
+      case 'decrementBy5':
+        newValue = value<=5 ? 0 : value -5;
+        this.props.handleChange(name, newValue);
+        break;
+      case 'incrementBy5':
+        newValue = value + 5;
+        this.props.handleChange(name, newValue);
+        break;
+      case 'incrementBy1':
+        newValue = value + 1;
+        this.props.handleChange(name, newValue);
+        break;
+      default:
+    }
   }
 
-  handleDecrement = (name, value) => {
-    let newValue = value===0 ? 0 : value -1;
-    this.props.handleChange(name, newValue);
-  }
+  // handleBigDecrement = (name, value) => {
+  //   let newValue = value<=5 ? 0 : value -5;
+  //   this.props.handleChange(name, newValue);
+  // }
 
-  handleIncrement = (name, value) => {
-    let newValue = value + 1;
-    this.props.handleChange(name, newValue);
-  }
+  // handleDecrement = (name, value) => {
+  //   let newValue = value===0 ? 0 : value -1;
+  //   this.props.handleChange(name, newValue);
+  // }
 
-  handleBigIncrement = (name, value) => {
-    let newValue = value + 5;
-    this.props.handleChange(name, newValue);
-  }
+  // handleIncrement = (name, value) => {
+  //   let newValue = value + 1;
+  //   this.props.handleChange(name, newValue);
+  // }
+
+  // handleBigIncrement = (name, value) => {
+  //   let newValue = value + 5;
+  //   this.props.handleChange(name, newValue);
+  // }
 }
 
 export default Counter;
