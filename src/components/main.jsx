@@ -16,13 +16,10 @@ class Main extends Component {
   }
 
   handleChange = (name, value) => {
-    // console.log("name: ", name);
-    // console.log("value: ", value);
     this.setState({ [name] : value });
   };
 
   reset = () => {
-    //console.log("resetting");
     this.setState({
       life: 20,
       oppLife: 20,
@@ -56,10 +53,7 @@ class Main extends Component {
           <p style={{textAlign: 'center'}}>
             <button onClick={() => this.reset()}>Reset All</button>
           </p>
-
           <Display displayValues = {calc(this.state)}/>
-
-          {/* <p style={{textAlign: 'center'}}>{calc(this.state)}</p> */}
         </div>
       </div>
     );
