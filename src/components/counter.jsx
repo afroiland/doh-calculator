@@ -6,7 +6,7 @@ const displayNames = {
   lands: "Lands",
   soldiers: "Soldiers",
   oppBlockers: "Opponent's Blockers",
-  oppPower: "Opponent Power",
+  oppPower: "Total Opponent Power",
   oppEvasivePower: "Opponent Evasive Power",
   reclamations: "Reclamations"
 }
@@ -15,7 +15,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <span style={{marginRight: 10}}>{this.getName(this.props.name)}</span>
+        <span style={{marginRight: 10}}>{displayNames[this.props.name]}</span>
         <button onClick={() => this.handleButtonClick(this.props.name, this.props.value, 'decrementBy1')}>-1</button>
         <button onClick={() => this.handleButtonClick(this.props.name, this.props.value, 'decrementBy5')}>-5</button>
         <button onClick={() => this.handleButtonClick(this.props.name, this.props.value, 'incrementBy5')}>+5</button>
@@ -25,10 +25,6 @@ class Counter extends Component {
         <br />
       </div>
     );
-  }
-
-  getName(name) {
-    return displayNames[name];
   }
 
   handleButtonClick = (name, value, typeOfChange) => {
@@ -53,26 +49,6 @@ class Counter extends Component {
       default:
     }
   }
-
-  // handleBigDecrement = (name, value) => {
-  //   let newValue = value<=5 ? 0 : value -5;
-  //   this.props.handleChange(name, newValue);
-  // }
-
-  // handleDecrement = (name, value) => {
-  //   let newValue = value===0 ? 0 : value -1;
-  //   this.props.handleChange(name, newValue);
-  // }
-
-  // handleIncrement = (name, value) => {
-  //   let newValue = value + 1;
-  //   this.props.handleChange(name, newValue);
-  // }
-
-  // handleBigIncrement = (name, value) => {
-  //   let newValue = value + 5;
-  //   this.props.handleChange(name, newValue);
-  // }
 }
 
 export default Counter;
